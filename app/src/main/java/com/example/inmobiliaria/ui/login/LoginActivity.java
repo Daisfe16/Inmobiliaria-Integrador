@@ -1,49 +1,49 @@
 package com.example.inmobiliaria.ui.login;
 
-import android.os.Bundle;
-import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.inmobiliaria.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
-    private  LoginViewModel  vModel;
-    private ActivityLoginBinding bindig;
 
+    private ActivityLoginBinding binding;
+    private LoginViewModel loginViewModel;
 
     @Override
-    protected void onCreate(Bundle savedIstanceState){
-        super.onCreate(savedIstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        vModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(LoginViewModel.class);
-        bindig = ActivityLoginBinding.inflate(getLayoutInflater());
 
-        vModel.getmMensaje().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-            }
-        });
-        vModel.getmLogin().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
 
-            }
+        loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+
+
+        loginViewModel.getTokenLiveData().observe(this, token -> {
+            Toast.makeText(this, "Login exitoso ✅", Toast.LENGTH_SHORT).show();
+            // Acá podrías abrir otra Activity o guardar más datos
         });
 
-        bindig.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String usuario = bindig
+        loginViewModel.getErrorLiveData().observe(this, error -> {
+            Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+        });
 
+        // Evento del botón
+        binding.btnLogin.setOnClickListener(v -> {
+            String usuario = binding.etUsuario.getText().toString();
+            String clave = binding.etClave.getText().toString();
+
+            if (usuario.isEmpty() || clave.isEmpty()) {
+                Toast.makeText(this, "Complete todos los campos", Toast.LENGTH_SHORT).show();
+            } else {
+                loginViewModel.login(usuario, clave);
             }
-        })
-
-        };
+        });
     }
-
-
 }
