@@ -39,7 +39,7 @@ public class LoginViewModel extends AndroidViewModel {
         return errorLiveData;
     }
 
-    // 🔹 Método que hace la llamada al API
+    // Método que hace la llamada al API
     public void login(String usuario, String clave) {
         ApiClient.InmobiliariaService api = ApiClient.getApiInmobiliaria();
 
