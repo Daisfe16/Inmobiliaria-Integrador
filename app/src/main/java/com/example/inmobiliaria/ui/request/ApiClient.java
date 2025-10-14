@@ -22,7 +22,7 @@ public class ApiClient {
 
     public static InmobiliariaService getApiInmobiliaria(){
         Gson gson = new GsonBuilder()
-                //.setLenient()
+                .setStrictness(com.google.gson.Strictness.LENIENT)
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URLBASE)
