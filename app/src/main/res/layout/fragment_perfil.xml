@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_degradado"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="20dp" />
+
+
+        <!-- DNI -->
+        <TextView
+            android:text="DNI"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="17495869"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <!-- Nombre -->
+        <TextView
+            android:text="Nombre"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Sonia"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <!-- Apellido -->
+        <TextView
+            android:text="Apellido"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvApellido"
+            android:text="Lucero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Email -->
+        <TextView
+            android:text="E-mail"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:text="sonia@mail.com"
+            android:textColor="@android:color/holo_purple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Teléfono -->
+        <TextView
+            android:text="Teléfono"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:text="2664854517"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Botón Editar -->
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="EDITAR"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#009688"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/btn_redondeado" />
+        <Button
+            android:id="@+id/btnCambiarContraseña"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="CAMBIAR CLAVE"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#009688"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/btn_redondeado" />
+
+    </LinearLayout>
+</ScrollView>
