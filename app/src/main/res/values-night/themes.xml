@@ -1,16 +1,45 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Inmobiliaria" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+    <!-- Tema oscuro SilverLight Dark -->
+    <style name="Theme.Inmobiliaria" parent="Theme.Material3.Dark.NoActionBar">
+
+        <!-- Colores base -->
+        <item name="colorPrimary">@color/darkPrimary</item>
+        <item name="colorSecondary">@color/darkSecondary</item>
+        <item name="colorAccent">@color/darkAccent</item>
+        <item name="colorOnPrimary">?attr/colorOnSurface</item>
+        <item name="android:textColor">@color/darkTextPrimary</item>
+
+        <!-- Tipografía -->
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+
+        <!-- Botones -->
+        <item name="android:buttonStyle">@style/Widget.SilverLightDark.Button</item>
+
+        <!-- EditText -->
+        <item name="android:editTextStyle">@style/Widget.SilverLightDark.EditText</item>
+
+        <!-- Fondo -->
+        <item name="android:windowBackground">@drawable/bg_dark_gradient</item>
+
+        <!-- Barras del sistema -->
+        <item name="android:statusBarColor">@color/darkPrimary</item>
+        <item name="android:navigationBarColor">@color/darkPrimary</item>
+
     </style>
+
+    <!-- Botón oscuro metálico -->
+    <style name="Widget.SilverLightDark.Button" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/btn_dark_silver</item>
+        <item name="android:textColor">@color/darkTextPrimary</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+    </style>
+
+    <!-- EditText oscuro -->
+    <style name="Widget.SilverLightDark.EditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/darkTextPrimary</item>
+        <item name="boxStrokeColor">@color/darkAccent</item>
+        <item name="boxBackgroundColor">@color/darkSecondary</item>
+    </style>
+
 </resources>

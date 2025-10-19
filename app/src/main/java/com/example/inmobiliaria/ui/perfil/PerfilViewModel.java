@@ -21,6 +21,8 @@ public class PerfilViewModel extends AndroidViewModel {
     private MutableLiveData<Boolean> mutableEstado = new MutableLiveData<>();
     private MutableLiveData<String> mutableNombreBt = new MutableLiveData<>();
 
+    private MutableLiveData<Boolean> navegarCambiarClave = new MutableLiveData<>();
+
     public PerfilViewModel(@NonNull Application application) {
         super(application);
     }
@@ -36,6 +38,18 @@ public class PerfilViewModel extends AndroidViewModel {
     public LiveData<String> getNombreBt() {
         return mutableNombreBt;
     }
+
+    public LiveData<Boolean> getNavegarCambiarClave() {
+        return navegarCambiarClave;
+    }
+    public void onCambiarClaveClicked() {
+        navegarCambiarClave.setValue(true);
+    }
+
+    public void resetearEventoNavegacion() {
+        navegarCambiarClave.setValue(false);
+    }
+
 
     public void guardar(String btEditar, String dni, String nombre, String apellido, String email, String telefono) {
         if (btEditar.equalsIgnoreCase("Editar")) {
@@ -58,7 +72,7 @@ public class PerfilViewModel extends AndroidViewModel {
 
                 String token = ApiClient.obtenerToken(getApplication());
                 ApiClient.InmobiliariaService api = ApiClient.getApiInmobiliaria();
-                Call<Propietario> call = api.actualizarPropietario("Bearer " + token, propietario);
+                Call<Propietario> call = api.actualizarPropietario( token, propietario);
                 call.enqueue(new Callback<Propietario>() {
                     @Override
                     public void onResponse(Call<Propietario> call, retrofit2.Response<Propietario> response) {
@@ -84,7 +98,7 @@ public class PerfilViewModel extends AndroidViewModel {
     public void leerPropietaro() {
         String token = ApiClient.obtenerToken(getApplication());
         ApiClient.InmobiliariaService api = ApiClient.getApiInmobiliaria();
-        Call<Propietario> call = api.obtenerPropietario("Bearer " + token);
+        Call<Propietario> call = api.obtenerPropietario(  token);
         call.enqueue(new Callback<Propietario>() {
             @Override
             public void onResponse(Call<Propietario> call, retrofit2.Response<Propietario> response) {

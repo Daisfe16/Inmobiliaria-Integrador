@@ -15,121 +15,75 @@
 
         <!-- Título -->
         <TextView
-            android:id="@+id/tvTitulo"
+            android:id="@+id/tvTituloContra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Perfil"
+            android:text="Cambiar clave"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="@color/textPrimary"
             android:fontFamily="@font/montserrat_semibold"
             android:layout_marginBottom="20dp" />
 
-        <!-- Campo DNI -->
+        <!-- Contraseña actual -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="DNI"
+            android:hint="Contraseña actual"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/colorAccent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvDni"
+                android:id="@+id/etContraActual"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+                android:inputType="textPassword"
                 android:textColor="@color/textSecondary" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Campo Nombre -->
+        <!-- Nueva contraseña -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
+            android:hint="Nueva contraseña"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/colorAccent"
             android:layout_marginTop="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvNombre"
+                android:id="@+id/etContraNueva"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+                android:inputType="textPassword"
                 android:textColor="@color/textSecondary" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Campo Apellido -->
+        <!-- Confirmar nueva contraseña -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Apellido"
+            android:hint="Confirmar nueva contraseña"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/colorAccent"
             android:layout_marginTop="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvApellido"
+                android:id="@+id/etContraNConfirmar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+                android:inputType="textPassword"
                 android:textColor="@color/textSecondary" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Campo Email -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="E-mail"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorAccent"
-            android:layout_marginTop="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:textColor="@color/textSecondary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo Teléfono -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Teléfono"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorAccent"
-            android:layout_marginTop="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvTelefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:textColor="@color/textSecondary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Botón Editar -->
+        <!-- Botón Confirmar -->
         <Button
-            android:id="@+id/btnEditar"
+            android:id="@+id/btConfirmarContra"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Editar"
+            android:text="Confirmar"
             android:textAllCaps="false"
             android:background="@drawable/btn_silver"
             android:layout_marginTop="24dp"
-            android:textColor="@color/textPrimary"
-            android:fontFamily="@font/montserrat_semibold" />
-
-        <!-- Botón Cambiar Clave -->
-        <Button
-            android:id="@+id/btnCambiarContraseña"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Cambiar clave"
-            android:textAllCaps="false"
-            android:background="@drawable/btn_silver"
-            android:layout_marginTop="12dp"
             android:textColor="@color/textPrimary"
             android:fontFamily="@font/montserrat_semibold" />
 

@@ -57,5 +57,9 @@ public class LoginActivity extends AppCompatActivity {
             String clave = binding.etClave.getText().toString().trim();
             loginViewModel.login(usuario, clave);
         });
+
+
     }
+
 }
+

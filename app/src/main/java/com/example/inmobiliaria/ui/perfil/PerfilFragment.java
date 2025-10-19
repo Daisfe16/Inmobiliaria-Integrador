@@ -10,8 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 
+import com.example.inmobiliaria.R;
 import com.example.inmobiliaria.databinding.FragmentPerfilBinding;
 
 public class PerfilFragment extends Fragment {
@@ -36,13 +39,26 @@ public class PerfilFragment extends Fragment {
             binding.tvTelefono.setText(propietario.getTelefono());
 
         });
+        perfilViewModel.getNavegarCambiarClave().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean navegarCambiarClave) {
+                if (Boolean.TRUE.equals(navegarCambiarClave)) {
+                    perfilViewModel.resetearEventoNavegacion();
+                    NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
+                    navController.navigate(R.id.action_perfilFragment_to_cambiarClaveFragment);
+                }
+            }
+        });
+
+
         perfilViewModel.getEstado().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
             public void onChanged(Boolean estado) {
-                binding.tvDni.setEnabled(true);
-                binding.tvNombre.setEnabled(true);
-                binding.tvApellido.setEnabled(true);
-                binding.tvEmail.setEnabled(true);
-                binding.tvTelefono.setEnabled(true);
+                binding.tvDni.setEnabled(estado);
+                binding.tvNombre.setEnabled(estado);
+                binding.tvApellido.setEnabled(estado);
+                binding.tvEmail.setEnabled(estado);
+                binding.tvTelefono.setEnabled(estado);
+
             }});
 
         perfilViewModel.getNombreBt().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -66,6 +82,13 @@ public class PerfilFragment extends Fragment {
                 perfilViewModel.guardar(binding.btnEditar.getText().toString(), dni, nombre, apellido, email, telefono);
             }
         });
+        binding.btnCambiarContraseA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                perfilViewModel.onCambiarClaveClicked();
+            }
+        });
+
 
 
         return root;

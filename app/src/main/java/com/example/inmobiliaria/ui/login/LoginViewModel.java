@@ -18,9 +18,17 @@ public class LoginViewModel extends AndroidViewModel {
 
     private MutableLiveData<Boolean> loginResult;
     private MutableLiveData<String> mensaje;
+    private MutableLiveData<Boolean> uYalogeado;
 
     public LoginViewModel(@NonNull Application application) {
         super(application);
+    }
+
+    public LiveData<Boolean> getuYalogeado() {
+        if (uYalogeado == null) {
+            uYalogeado = new MutableLiveData<>();
+        }
+        return uYalogeado;
     }
 
     public LiveData<Boolean> getLoginResult() {
@@ -67,5 +75,8 @@ public class LoginViewModel extends AndroidViewModel {
                 Log.e("LoginError", t.getMessage(), t);
             }
         });
+
+
     }
+
 }

@@ -3,23 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_inicio">
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.inmobiliaria.ui.home.HomeFragment"
+        android:name="com.example.inmobiliaria.ui.contra.CambiarClaveFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_cambiar_clave" />
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.example.inmobiliaria.ui.inicio.InicioFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.inmobiliaria.ui.perfil.PerfilFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_perfil" />
+        android:label="@string/perfil"
+        tools:layout="@layout/fragment_perfil">
+    <action
+        android:id="@+id/action_perfilFragment_to_cambiarClaveFragment"
+        app:destination="@id/cambiarClaveFragment" />
+    </fragment>
+
+
+    <fragment android:id="@+id/cambiarClaveFragment"
+        android:name="com.example.inmobiliaria.ui.contra.CambiarClaveFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_cambiar_clave" />
+
+
+
+
+
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.inmobiliaria.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_inmueble"
+        android:name="com.example.inmobiliaria.ui.inmueble.InmueblesFragment"
+        android:label="Inmueble"
+        tools:layout="@layout/inmueble_card" />
+
 </navigation>
