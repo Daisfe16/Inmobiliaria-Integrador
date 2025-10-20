@@ -68,7 +68,7 @@ public class CambiarClaveViewModel extends AndroidViewModel {
         String token = ApiClient.obtenerToken(getApplication());
         ApiClient.InmobiliariaService api = ApiClient.getApiInmobiliaria();
 
-        Call<Void> call = api.cambiarClave("Bearer " + token, actual, nueva);
+        Call<Void> call = api.cambiarClave(token, actual, nueva);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
