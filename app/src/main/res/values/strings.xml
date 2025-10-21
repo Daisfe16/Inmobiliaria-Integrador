@@ -26,4 +26,5 @@
     <string name="direccion">Direccion</string>
     <string name="tipo">Tipo</string>
     <string name="cambiar_clave">Cambiar Clave</string>
+    <string name="cambiar_clavee">Cambiar clave</string>
 </resources>

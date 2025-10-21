@@ -32,6 +32,10 @@ public class Inmueble implements Serializable {
         this.idPropietario = idPropietario;
         this.duenio = duenio;
     }
+    public Inmueble (){
+
+    }
+
 
     public int getIdInmueble() {
         return idInmueble;

@@ -66,6 +66,10 @@ public class ApiClient {
                 @Field("currentPassword") String actual,
                 @Field("newPassword") String nueva
         );
+        @PUT("api/Inmuebles/actualizar")
+        Call<Inmueble> actualizarInmueble(
+                @Header ("Authorization") String token,
+                @Body Inmueble inmueble);
 
     }
 }

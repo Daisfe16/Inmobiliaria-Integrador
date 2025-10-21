@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.inmobiliaria.ui.contra.CambiarClaveFragment"
-        android:label="@string/menu_home"
+        android:label="Cambiar clave"
         tools:layout="@layout/fragment_cambiar_clave" />
 
     <fragment
@@ -30,8 +30,10 @@
 
     <fragment android:id="@+id/cambiarClaveFragment"
         android:name="com.example.inmobiliaria.ui.contra.CambiarClaveFragment"
-        android:label="@string/menu_home"
+        android:label="@string/cambiar_clavee"
         tools:layout="@layout/fragment_cambiar_clave" />
+
+
 
 
 
@@ -48,6 +50,19 @@
         android:id="@+id/nav_inmueble"
         android:name="com.example.inmobiliaria.ui.inmueble.InmueblesFragment"
         android:label="Inmueble"
-        tools:layout="@layout/inmueble_card" />
+        tools:layout="@layout/inmueble_card" >
+        <action
+            android:id="@+id/action_nav_inmueble_to_detalleDeInmuebleFragment"
+            app:destination="@id/detalleDeInmuebleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleDeInmuebleFragment"
+        android:name="com.example.inmobiliaria.ui.inmueble.DetalleDeInmuebleFragment"
+        android:label="Detalle de Inmueble"
+        tools:layout="@layout/fragment_detalle_de_inmueble" >
+        <action
+            android:id="@+id/action_detalleDeInmuebleFragment_to_nav_inmueble"
+            app:destination="@id/nav_inmueble" />
+    </fragment>
 
 </navigation>

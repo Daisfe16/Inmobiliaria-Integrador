@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:windowBackground"
+    tools:context=".ui.inmueble.DetalleDeInmuebleFragment">
+
+    <!-- ID -->
+    <TextView
+        android:id="@+id/tvInfoCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID:"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/tvIdInmueble"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="12345"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintStart_toEndOf="@+id/tvInfoCodigo"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoCodigo"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Dirección -->
+    <TextView
+        android:id="@+id/tvInfoDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dirección:"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInfoCodigo"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tvDireccionI"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Av. Siempre Viva 742"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintStart_toEndOf="@id/tvInfoDireccion"
+        app:layout_constraintTop_toTopOf="@id/tvInfoDireccion"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Uso -->
+    <TextView
+        android:id="@+id/tvInfoUso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uso:"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDireccionI"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tvUsoI"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Residencial"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintStart_toEndOf="@id/tvInfoUso"
+        app:layout_constraintTop_toTopOf="@id/tvInfoUso"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Ambientes -->
+    <TextView
+        android:id="@+id/tvInfoAmbientesI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ambientes:"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUsoI"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tvAmbientesI"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintStart_toEndOf="@id/tvInfoAmbientesI"
+        app:layout_constraintTop_toTopOf="@id/tvInfoAmbientesI"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Latitud -->
+    <TextView
+        android:id="@+id/tvInfoLatitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitud:"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAmbientesI"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tvLatitudI"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="45.12345"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintStart_toEndOf="@id/tvInfoLatitud"
+        app:layout_constraintTop_toTopOf="@id/tvInfoLatitud"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Longitud -->
+    <TextView
+        android:id="@+id/tvInfoLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitud:"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLatitudI"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tvLongitudI"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-93.12345"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintStart_toEndOf="@id/tvInfoLongitud"
+        app:layout_constraintTop_toTopOf="@id/tvInfoLongitud"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Valor -->
+    <TextView
+        android:id="@+id/tvInfoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor:"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLongitudI"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tvValorI"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="$120,000"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintStart_toEndOf="@id/tvInfoValor"
+        app:layout_constraintTop_toTopOf="@id/tvInfoValor"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Disponible -->
+    <CheckBox
+        android:id="@+id/checkDisponible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disponible"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvValorI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Imagen del inmueble -->
+    <ImageView
+        android:id="@+id/imgInmuebleD"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/checkDisponible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
