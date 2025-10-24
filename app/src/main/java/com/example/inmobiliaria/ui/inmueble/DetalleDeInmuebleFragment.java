@@ -37,8 +37,9 @@ public class DetalleDeInmuebleFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        binding = FragmentDetalleDeInmuebleBinding.bind(inflater.inflate(R.layout.fragment_detalle_de_inmueble, container, false));
-        mViewModel.obtenerInmueble(getArguments());
+        binding = FragmentDetalleDeInmuebleBinding.inflate(inflater, container, false);
+
+
 
         mViewModel = new ViewModelProvider(this).get(DetalleDeInmuebleViewModel.class);
 
@@ -46,7 +47,7 @@ public class DetalleDeInmuebleFragment extends Fragment {
             binding.tvIdInmueble.setText(inmueble.getIdInmueble() + "");
             binding.tvDireccionI.setText(inmueble.getDireccion());
             binding.tvUsoI.setText(inmueble.getUso());
-            binding.tvAmbientesI.setText(inmueble.getAmbientes());
+            binding.tvAmbientesI.setText(inmueble.getAmbientes() + "");
             binding.tvLatitudI.setText(inmueble.getLatitud() + "");
             binding.tvLongitudI.setText(inmueble.getLongitud() + "");
             binding.tvValorI.setText(inmueble.getValor() + "");

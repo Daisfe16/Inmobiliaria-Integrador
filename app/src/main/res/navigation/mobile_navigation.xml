@@ -36,10 +36,6 @@
 
 
 
-
-
-
-
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.inmobiliaria.ui.slideshow.SlideshowFragment"
