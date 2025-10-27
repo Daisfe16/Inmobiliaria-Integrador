@@ -21,9 +21,25 @@ public class InmueblesViewModel extends AndroidViewModel {
     private final MutableLiveData<String> mText = new MutableLiveData<>();
     private final MutableLiveData<List<Inmueble>> mInmueble = new MutableLiveData<>();
 
+    private final MutableLiveData<Boolean> navegarAgregarInmueble = new MutableLiveData<>();
+
+
     public InmueblesViewModel(@NonNull Application application) {
         super(application);
         leerInmuebles();
+    }
+    public LiveData<Boolean> getNavegarAgregarInmueble() {
+
+        return navegarAgregarInmueble;
+    }
+    public void onAgregarInmuebleClicked() {
+
+        navegarAgregarInmueble.setValue(true);
+    }
+
+    public void resetearEventoNavegacionInmueble() {
+
+        navegarAgregarInmueble.setValue(false);
     }
 
     public LiveData<String> getmText() {

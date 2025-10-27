@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_nav_inmueble_to_detalleDeInmuebleFragment"
             app:destination="@id/detalleDeInmuebleFragment" />
+        <action
+            android:id="@+id/action_nav_inmueble_to_agregarFragment"
+            app:destination="@id/agregarFragment" />
     </fragment>
     <fragment
         android:id="@+id/detalleDeInmuebleFragment"
@@ -58,6 +61,15 @@
         tools:layout="@layout/fragment_detalle_de_inmueble" >
         <action
             android:id="@+id/action_detalleDeInmuebleFragment_to_nav_inmueble"
+            app:destination="@id/nav_inmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarFragment"
+        android:name="com.example.inmobiliaria.ui.inmueble.AgregarFragment"
+        android:label="Agregar Inmueble"
+        tools:layout="@layout/fragment_agregar" >
+        <action
+            android:id="@+id/action_agregarFragment_to_nav_inmueble"
             app:destination="@id/nav_inmueble" />
     </fragment>
 
