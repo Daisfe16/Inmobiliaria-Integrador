@@ -53,6 +53,21 @@ public class AgregarFragment extends Fragment {
 
             }
         });
+        binding.btnAgregarInmueble.setOnClickListener(new View.OnClickListener() {
+                                                          @Override
+                                                          public void onClick(View v) {
+                                                              mViewModel.agregarInmueble(
+                                                                      binding.etDireccion.getText().toString(),
+                                                                      binding.etPrecio.getText().toString(),
+                                                                      binding.etUso.getText().toString(),
+                                                                      binding.etTipo.getText().toString(),
+                                                                      binding.etSuperficie.getText().toString(),
+                                                                      binding.etAmbientes.getText().toString(),
+                                                                      binding.cbDisponible.isChecked()
+                                                              );
+                                                          }
+
+                                                      });
 
         mViewModel.getMUri().observe(getViewLifecycleOwner(), new Observer<Uri>() {
             @Override
@@ -68,14 +83,6 @@ public class AgregarFragment extends Fragment {
         return binding.getRoot();
     }
 
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(AgregarViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
     private void abrirGaleria() {
         intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);//Es para abrir la galeria
         arl = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -86,4 +93,6 @@ public class AgregarFragment extends Fragment {
             }
         });
     }
+
+
 }
